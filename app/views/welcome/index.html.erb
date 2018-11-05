@@ -1,0 +1,25 @@
+<h1>Welcome</h1>
+
+<h2>Articles</h2>
+<% if @articles.any? %>
+  <p>Some articles I wrote.</p>
+  <ul>
+    <% @articles.each do |article| %>
+      <li><%= link_to article.title, article_path(article) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Sorry, no articles at the moment.</p>
+<% end %>
+
+<h2>Projects</h2>
+<% if @projects.any? %>
+  <p>A glipse of my work.</p>
+  <ul>
+    <% @projects.each do |project| %>
+      <li><%= link_to project.title, project_path(project) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Sorry, no projects to show.</p>
+<% end %>
