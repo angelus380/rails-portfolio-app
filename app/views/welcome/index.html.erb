@@ -9,8 +9,8 @@
       <li><%= link_to article.title, article_path(article) %></li>
     <% end %>
   </ul>
-  <%= will_paginate @articles %>
 
+  <%= link_to "More Articles", articles_path %>
 <% else %>
   <p>Sorry, no articles at the moment.</p>
 <% end %>
@@ -24,7 +24,7 @@
       <li><%= link_to project.title, project_path(project) %></li>
     <% end %>
   </ul>
-  <%= will_paginate @projects %>
+  <%= link_to "More Projects", projects_path %>
 
 <% else %>
   <p>Sorry, no projects to show.</p>

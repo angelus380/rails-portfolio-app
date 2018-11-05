@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  get "welcome/index"
-
+  root 			"welcome#index"
+  get 			"/dashboard", to: "dashboard#index"
   resources :articles
   resources :projects
-
-  root "welcome#index"
 end

@@ -1,10 +1,11 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  http_basic_authenticate_with name: "insert_name", password: "insert_password", except: [:index, :show]
 
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all.order("created_at desc")
+    @projects = Project.all.order("created_at desc").paginate(page: params[:page], per_page: 10)
   end
 
   # GET /projects/1
